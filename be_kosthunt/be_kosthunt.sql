@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 27, 2025 at 04:04 PM
+-- Generation Time: Jul 06, 2025 at 03:32 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.2.28
 
@@ -129,7 +129,7 @@ CREATE TABLE `favorit` (
 
 INSERT INTO `favorit` (`id`, `pengguna_id`, `properti_id`, `created_at`) VALUES
 (6, 1, 6, '2025-06-13 10:19:25'),
-(17, 10, 9, '2025-06-13 18:06:39');
+(43, 10, 7, '2025-07-06 10:27:15');
 
 -- --------------------------------------------------------
 
@@ -152,18 +152,18 @@ CREATE TABLE `kamar` (
 --
 
 INSERT INTO `kamar` (`id`, `properti_id`, `nama_kamar`, `harga`, `tipe_kelamin`, `status`, `foto`) VALUES
-(2, 3, 'Kamar A1', '1200000.00', 'putra', 'tersedia', 'uploads/kamar/kos1.png'),
-(3, 3, 'Kamar A2', '1500000.00', 'putra', 'dipesan', 'uploads/kamar/kos1_2.png'),
-(4, 3, 'Kamar A3', '1000000.00', 'putra', 'tidak_tersedia', 'uploads/kamar/kos1_2.png'),
-(5, 4, 'Compact Single A', '800000.00', 'putri', 'tersedia', 'uploads/kamar/kos2_1.png'),
-(6, 4, 'Compact Single B', '720000.00', 'putri', 'dipesan', 'uploads/kamar/kos2_2.png'),
-(7, 6, 'Lantai 1', '1500000.00', 'putri', 'tersedia', 'uploads/kamar/kos3_1.png'),
-(8, 7, 'Gedung 1', '2500000.00', 'campur', 'tersedia', 'uploads/kamar/kos3_1.png'),
-(9, 8, 'Lantai 1', '700000.00', 'putra', 'tersedia', 'uploads/kamar/kos5_1.png'),
-(10, 8, 'Lantai 2', '950000.00', 'putra', 'tersedia', 'uploads/kamar/kos5_2.png'),
-(11, 9, 'Kamar A', '2000000.00', 'campur', 'tersedia', 'uploads/kamar/kos6_1.png'),
-(12, 9, 'Kamar B', '1900000.00', 'campur', 'tidak_tersedia', 'uploads/kamar/kos6_2.png'),
-(13, 9, 'Kamar C', '2200000.00', 'campur', 'tersedia', 'uploads/kamar/kos6_3.png');
+(2, 3, 'Kamar A1', '1200000.00', 'putra', 'tersedia', 'kamar/kos1.png'),
+(3, 3, 'Kamar A2', '1500000.00', 'putra', 'dipesan', 'kamar/kos1_3.png'),
+(4, 3, 'Kamar A3', '1000000.00', 'putra', 'tidak_tersedia', 'kamar/kos1_2.png'),
+(5, 4, 'Compact Single A', '800000.00', 'putri', 'tersedia', 'kamar/kos2_1.png'),
+(6, 4, 'Compact Single B', '720000.00', 'putri', 'dipesan', 'kamar/kos2_2.png'),
+(7, 6, 'Lantai 1', '1500000.00', 'putri', 'tersedia', 'kamar/kos3_1.png'),
+(8, 7, 'Gedung 1', '2500000.00', 'campur', 'tersedia', 'kamar/kos4_1.png'),
+(9, 8, 'Lantai 1', '700000.00', 'putra', 'tersedia', 'kamar/kos5_1.png'),
+(10, 8, 'Lantai 2', '950000.00', 'putra', 'tersedia', 'kamar/kos5_2.png'),
+(11, 9, 'Kamar A', '2000000.00', 'campur', 'tersedia', 'kamar/kos6_1.png'),
+(12, 9, 'Kamar B', '1900000.00', 'campur', 'tidak_tersedia', 'kamar/kos6_2.png'),
+(13, 9, 'Kamar C', '2200000.00', 'campur', 'tersedia', 'kamar/kos6_3.png');
 
 -- --------------------------------------------------------
 
@@ -188,7 +188,12 @@ INSERT INTO `pembayaran` (`id`, `pemesanan_id`, `metode`, `jumlah`, `status`, `t
 (22, 24, 'BCA', '2050000.00', 'berhasil', '2025-06-15 09:04:29'),
 (23, 25, 'Mandiri', '4050000.00', 'berhasil', '2025-06-15 09:20:10'),
 (24, 26, 'BNI', '2050000.00', 'berhasil', '2025-06-15 09:28:36'),
-(25, 27, 'BNI', '6050000.00', 'berhasil', '2025-06-16 07:31:37');
+(25, 27, 'BNI', '6050000.00', 'berhasil', '2025-06-16 07:31:37'),
+(26, 28, 'Mandiri', '16050000.00', 'berhasil', '2025-07-02 06:39:32'),
+(27, 30, 'BNI', '6050000.00', 'menunggu', '2025-07-06 07:22:11'),
+(28, 31, 'Mandiri', '8050000.00', 'menunggu', '2025-07-06 07:25:12'),
+(29, 32, 'Mandiri', '18050000.00', 'menunggu', '2025-07-06 14:47:37'),
+(30, 33, 'Mandiri', '6650000.00', 'menunggu', '2025-07-06 15:30:45');
 
 -- --------------------------------------------------------
 
@@ -211,11 +216,17 @@ CREATE TABLE `pemesanan` (
 --
 
 INSERT INTO `pemesanan` (`id`, `pengguna_id`, `kamar_id`, `tanggal_mulai`, `tanggal_selesai`, `status`, `created_at`) VALUES
-(23, 10, 11, '2025-06-26', '2026-03-26', 'pending', '2025-06-15 09:01:41'),
 (24, 10, 11, '2025-06-27', '2025-07-27', 'pending', '2025-06-15 09:04:23'),
 (25, 10, 11, '2025-06-19', '2025-08-19', 'pending', '2025-06-15 09:20:02'),
 (26, 10, 11, '2025-06-28', '2025-07-28', 'pending', '2025-06-15 09:28:29'),
-(27, 10, 11, '2025-06-27', '2025-09-27', 'pending', '2025-06-16 07:31:10');
+(27, 10, 11, '2025-06-27', '2025-09-27', 'pending', '2025-06-16 07:31:10'),
+(28, 10, 11, '2025-07-02', '2026-03-02', 'pending', '2025-07-02 06:39:24'),
+(29, 10, 8, '2025-07-16', '2025-12-16', 'pending', '2025-07-06 07:16:47'),
+(30, 10, 11, '2025-07-15', '2025-10-15', 'pending', '2025-07-06 07:22:03'),
+(31, 10, 11, '2025-07-22', '2025-11-22', 'pending', '2025-07-06 07:25:02'),
+(32, 10, 11, '2025-07-25', '2026-04-25', 'pending', '2025-07-06 14:47:29'),
+(33, 10, 13, '2025-07-31', '2025-10-31', 'pending', '2025-07-06 15:30:25'),
+(34, 10, 13, '2025-07-21', '2025-10-21', 'pending', '2025-07-06 15:31:21');
 
 -- --------------------------------------------------------
 
@@ -246,9 +257,8 @@ INSERT INTO `pengguna` (`id`, `nama`, `email`, `password`, `no_hp`, `peran`, `cr
 (8, 'ibu kost', 'ibuibubiasa@gmail.com', '$2y$10$puMp4yARImfB/1US7S5OdeLVvzX.C2fLyDzBn777UZAFbqt2htJK2', '084234793045', 'pemilik', '2025-06-12 12:33:55'),
 (9, 'Juragan Kost', 'juragan@gmail.com', '$2y$10$zStGzSBY7J1mdX/yHOz/CeJk15M3vgf63ucKpm769bmIijJT0uGvW', '083465725985', 'pemilik', '2025-06-12 13:05:48'),
 (10, 'm', 'm@gmail.com', '$2y$10$KFRJChhdD0P1y1qbrGgQRu5YjhSSjpYNwV.3lF/rdCHfy7X7Lgg22', '08657654879', 'pencari', '2025-06-12 18:48:12'),
-(11, 'kihi', 'kihi @gmail.com', '$2y$10$wUUO/zCS52HsDIv3ePp2TujCti/douenJTF/Rbcldrss91zCjT34C', '0987680987678', 'pencari', '2025-06-15 09:17:05'),
-(12, 'kafi', 'kafi@gmail.com', '$2y$10$tr5VXD/dVgLxgNq6FC/oheYUQaF7QoIkO7Xah/HAyD/0qRc7tbbwy', '085678345678', 'pencari', '2025-06-16 05:21:09'),
-(14, 'hello', 'helo@gmail.com', '$2y$10$3PzZ8ErNaQy4iHHzi1C5Vu2qa31eS1SwJRhJb0DFtxYLhgdPcS5W.', '08676374856', 'pencari', '2025-06-16 06:30:45');
+(18, 'kafi', 'kafi@gmail.com', '$2y$10$gYPpR0/4e1d7ENnDPTBiFO1DiFhlaYnA/ix/MeTJ61i34oJdIxEc6', '086754896450', 'pencari', '2025-07-06 14:46:00'),
+(19, 'hanifah', 'h@gmail.com', '$2y$10$d642thw1JwadE4P9vTPvDOMWe8g5MzgBXPRchd.YysMkLGJe9x/0.', '085897986045', 'pencari', '2025-07-06 15:25:22');
 
 -- --------------------------------------------------------
 
@@ -287,7 +297,7 @@ CREATE TABLE `properti` (
 --
 
 INSERT INTO `properti` (`id`, `nama_properti`, `alamat`, `deskripsi`, `tipe`, `foto`, `latitude`, `longitude`, `pemilik_id`, `created_at`) VALUES
-(3, 'Kos Melati', 'Jl. Raya Tlogomas No. 80, Tlogomas, Kec. Lowokwaru, Kota Malang', 'Tempat tinggal dengan suasana sederhana dan tenang, cocok untuk kamu yang ingin hidup praktis tanpa perlu keluar biaya besar. Lokasi strategis dan mudah diakses, membuat aktivitas harian jadi lebih efisien.', 'kos', 'kos1.jpg', '-7.92399523', '112.59879615', 3, '2025-06-11 19:46:59'),
+(3, 'Kos Melati', 'Jl. Raya Tlogomas No. 80, Tlogomas, Kec. Lowokwaru, Kota Malang', 'Tempat tinggal dengan suasana sederhana dan tenang, cocok untuk kamu yang ingin hidup praktis tanpa perlu keluar biaya besar. Lokasi strategis dan mudah diakses, membuat aktivitas harian jadi lebih efisien.', 'kos', 'kos1.png', '-7.92399523', '112.59879615', 3, '2025-06-11 19:46:59'),
 (4, 'Kos Lobi-lobi', 'Jl. Lobi‑lobi No. 6, Pisang Candi, Kec. Sukun, Kota Malang\"', 'Kos ekonomis dengan suasana yang mendukung kenyamanan dan ketenangan. Pilihan tepat bagi kamu yang mencari tempat tinggal sederhana dengan harga ramah di kantong.', 'kos', 'kos2.png', '-7.98151960', '112.61282130', 4, '2025-06-12 07:41:20'),
 (6, 'Sinta House', 'Jl. Joyo Utomo V Blk. F No.13, Merjosari, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144', 'Hunian ini merupakan pilihan ideal bagi keluarga kecil atau pasangan baru menikah yang mencari kenyamanan dan privasi. Rumah kontrakan terdiri dari dua kamar tidur, ruang tamu yang cukup luas, dapur tertutup, serta kamar mandi dengan shower. Halaman depan cukup untuk parkir motor atau taman kecil. Terletak di lingkungan yang tenang, tidak jauh dari sekolah, pasar, dan tempat ibadah. Akses jalan mudah dan aman, cocok untuk tempat tinggal jangka panjang.', 'kontrakan', 'kos3.png', '-7.94457000', '112.60080100', 6, '2025-06-12 09:48:29'),
 (7, 'Griya Kontrakan', 'Jl. Koral, Tlogomas, Kec. Lowokwaru, Kota Malang, Jawa Timur 65144', 'Rumah kontrakan ini baru saja direnovasi, menawarkan kenyamanan seperti rumah sendiri. Terdiri dari 3 kamar tidur, dapur modern, dan ruang keluarga yang lapang. Lantai keramik baru, langit-langit tinggi, dan pencahayaan alami membuat rumah terasa sejuk dan terang. Lokasi sangat strategis, dekat jalan raya utama, namun tetap tenang dari kebisingan. Halaman depan luas dan tempat parkir mobil.', 'kontrakan', 'kos4.png', '-7.93431180', '112.60302640', 7, '2025-06-12 12:16:15'),
@@ -382,7 +392,7 @@ ALTER TABLE `fasilitas_properti`
 -- AUTO_INCREMENT for table `favorit`
 --
 ALTER TABLE `favorit`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `kamar`
@@ -394,19 +404,19 @@ ALTER TABLE `kamar`
 -- AUTO_INCREMENT for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `pemesanan`
 --
 ALTER TABLE `pemesanan`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `pengumuman`
