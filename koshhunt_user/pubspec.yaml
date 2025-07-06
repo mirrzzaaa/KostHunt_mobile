@@ -1,0 +1,54 @@
+name: koshhunt_user
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you want to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  intl: ^0.18.1  
+  http: ^0.13.6
+  font_awesome_flutter: ^10.7.0   
+  cupertino_icons: ^1.0.8
+  shared_preferences: ^2.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/kamar/
+    - assets/kamar/kos1.png
+    - assets/kamar/kos1_2.png
+    - assets/kamar/kos1_3.png
+    - assets/kamar/kos2_1.png
+    - assets/kamar/kos2_2.png
+    - assets/kamar/kos3_1.png
+    - assets/kamar/kos4_1.png
+    - assets/kamar/kos5_1.png
+    - assets/kamar/kos5_2.png
+    - assets/kamar/kos6_1.png
+    - assets/kamar/kos6_2.png
+    - assets/kamar/kos6_3.png
+    - assets/placeholder.png
+    - assets/logo.png
+    - assets/login.png
+    - assets/google_logo.png
+    - assets/facebook_logo.png
+    - assets/banner.png
+    - assets/kos1.png
+    - assets/kos2.png
+    - assets/kos3.png
+    - assets/kos4.png
+    - assets/kos5.png
+    - assets/kos6.png
